@@ -7,5 +7,6 @@ namespace Test.Characters
     {
         public string characterName;
         public float maxSpeed;
+        public float rotationSmoothTime;
     }
 }
