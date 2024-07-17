@@ -7,8 +7,8 @@ namespace Test.Movement
     public class MovementController : MonoBehaviour
     {
         private CharacterData _data;
-        private Rigidbody _rb;
         private AnimationController _animationController;
+        private Rigidbody _rb;
         private Quaternion _rotation;
 
         private Vector3 _direction;
@@ -24,6 +24,7 @@ namespace Test.Movement
         {
             _direction = Vector3.zero;
             _data = character.characterData;
+            _animationController = character.animatorController;
             _rb = character.rb;
         }
 
@@ -40,6 +41,7 @@ namespace Test.Movement
         public void Update()
         {
             SetCurrentSpeed();
+            _animationController.PlayWalkAnimation(_speed);
         }
 
         private void SetCurrentSpeed()

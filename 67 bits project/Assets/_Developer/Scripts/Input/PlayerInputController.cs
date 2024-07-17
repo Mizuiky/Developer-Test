@@ -2,51 +2,54 @@ using Test.Movement;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputController : MonoBehaviour
+namespace Test.Input
 {
-    private Vector2 _direction;
-    private PlayerControls _playerControls;
-    private MovementController _movementController;
-
-    private void Awake()
+    public class PlayerInputController : MonoBehaviour
     {
-        _playerControls = new PlayerControls();
-    }
+        private Vector2 _direction;
+        private PlayerControls _playerControls;
+        private MovementController _movementController;
 
-    private void OnEnable()
-    {
-        _playerControls.Enable();
-    }
+        private void Awake()
+        {
+            _playerControls = new PlayerControls();
+        }
 
-    public void Init()
-    {
-        _movementController = GetComponent<MovementController>();
+        private void OnEnable()
+        {
+            _playerControls.Enable();
+        }
 
-        _playerControls.Player.Move.performed += Move;
-        _playerControls.Player.Move.canceled += CancelMovement;
+        public void Init()
+        {
+            _movementController = GetComponent<MovementController>();
 
-        _playerControls.Player.Punch.performed += Punch;
-    }
+            _playerControls.Player.Move.performed += Move;
+            _playerControls.Player.Move.canceled += CancelMovement;
 
-    private void Move(InputAction.CallbackContext context)
-    {
-        _direction = context.ReadValue<Vector2>();
-        _movementController.SetInput(_direction);
-    }
+            _playerControls.Player.Punch.performed += Punch;
+        }
 
-    private void CancelMovement(InputAction.CallbackContext context)
-    {
-        _direction = new Vector2(0f, 0f);
-        _movementController.SetInput(_direction);
-    }
+        private void Move(InputAction.CallbackContext context)
+        {
+            _direction = context.ReadValue<Vector2>();
+            _movementController.SetInput(_direction);
+        }
 
-    private void Punch(InputAction.CallbackContext context)
-    {
+        private void CancelMovement(InputAction.CallbackContext context)
+        {
+            _direction = new Vector2(0f, 0f);
+            _movementController.SetInput(_direction);
+        }
 
-    }
+        private void Punch(InputAction.CallbackContext context)
+        {
 
-    private void OnDisable()
-    {
-        _playerControls.Disable();
+        }
+
+        private void OnDisable()
+        {
+            _playerControls.Disable();
+        }
     }
 }
