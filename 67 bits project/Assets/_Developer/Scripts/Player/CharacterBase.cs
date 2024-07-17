@@ -10,11 +10,14 @@ namespace Test.Characters
         public void Start()
         {
             OnLoad();
+            Init();
         }
 
-        public void OnLoad()
+        public virtual void OnLoad()
         {
             _components = new CharacterComponents(this, characterData);
         }
+
+        public virtual void Init() { }
     }
 }

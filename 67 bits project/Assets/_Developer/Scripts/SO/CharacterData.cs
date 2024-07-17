@@ -7,6 +7,8 @@ namespace Test.Characters
     {
         public string characterName;
         public float maxSpeed;
+        public float acceleration;
+        public float deaceleration;
         public float rotationSmoothTime;
     }
 }
