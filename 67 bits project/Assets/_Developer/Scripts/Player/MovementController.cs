@@ -1,5 +1,5 @@
 using Test.Characters;
-using Unity.VisualScripting;
+using Test.Animation;
 using UnityEngine;
 
 namespace Test.Movement
@@ -8,6 +8,7 @@ namespace Test.Movement
     {
         private CharacterData _data;
         private Rigidbody _rb;
+        private AnimationController _animationController;
         private Quaternion _rotation;
 
         private Vector3 _direction;
@@ -15,6 +16,9 @@ namespace Test.Movement
         private float _horizontal;
         private float _vertical;
         private float _speed;
+        private float _acceleration;
+        private float _deaceleration;
+
         private float _targetAngle;
         private float _currentVelocity;
 

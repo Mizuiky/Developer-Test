@@ -1,6 +1,9 @@
 using Test.Characters;
 
-public class PlayerController : CharacterBase
+namespace Test.Characters
 {
+    public class PlayerController : CharacterBase
+    {
 
+    }
 }
