@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: SO_PlayerData
   m_EditorClassIdentifier: 
   characterName: Player1
-  maxSpeed: 350
+  maxSpeed: 12
+  acceleration: 10
+  deaceleration: 6
   rotationSmoothTime: 0.3
