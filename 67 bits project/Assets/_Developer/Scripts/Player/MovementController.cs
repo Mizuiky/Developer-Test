@@ -13,8 +13,6 @@ namespace Test.Movement
 
         private Vector3 _direction;
 
-        private float _horizontal;
-        private float _vertical;
         private float _speed;
         private float _acceleration;
         private float _deaceleration;
@@ -34,12 +32,25 @@ namespace Test.Movement
             _direction = Vector3.zero;
         }
 
+        public void SetInput(Vector2 input)
+        {
+            _direction = new Vector3(input.x, 0f, input.y).normalized;
+        }
+
         public void Update()
         {
-            _horizontal = Input.GetAxis("Horizontal");
-            _vertical = Input.GetAxis("Vertical");
+            SetCurrentSpeed();
+        }
 
-            _direction = new Vector3(_horizontal, 0f, _vertical).normalized;
+        private void SetCurrentSpeed()
+        {
+            if (_direction.magnitude > 0)
+                _speed += _data.acceleration * Time.deltaTime;
+            else
+                _speed -= _data.deaceleration * Time.deltaTime;
+
+            _speed = Mathf.Clamp(_speed, 0f, _data.maxSpeed);
+                                                                       
         }
 
         public void FixedUpdate()
@@ -48,8 +59,8 @@ namespace Test.Movement
  
             Rotate();
 
-            _direction *= _data.maxSpeed * Time.deltaTime;      
-            Move(_direction);           
+            Vector3 moveDirection = _direction * _speed;
+            Move(moveDirection);           
         }
 
         private void Move(Vector3 velocity)
