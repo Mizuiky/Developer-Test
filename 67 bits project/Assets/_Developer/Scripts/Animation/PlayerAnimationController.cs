@@ -30,10 +30,10 @@ namespace Test.Animation
             _animator.SetBool(_punchPerformed, true);
             _animator.SetInteger(_punchHand, _hand);
 
-            if (_hand == 0)
-                _hand = 1;
-            else
+            if (_hand == 1)
                 _hand = 0;
+            else
+                _hand = 1;
         }
 
         public void HasPunchPerformed()
