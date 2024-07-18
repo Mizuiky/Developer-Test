@@ -45,7 +45,6 @@ namespace Test.Input
 
         private void Punch(InputAction.CallbackContext context)
         {
-            Debug.Log("Punch input");
             _character.Punch();
         }
 

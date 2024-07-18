@@ -24,7 +24,7 @@ namespace Test.Movement
         {
             _direction = Vector3.zero;
             _data = character.characterData;
-            _animationController = character.character.GetComponent<PlayerAnimationController>();
+            _animationController = character.animationBase.GetComponent<PlayerAnimationController>();
             _rb = character.rb;
         }
 

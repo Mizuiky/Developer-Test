@@ -6,10 +6,15 @@ namespace Test.Characters
     {
         [SerializeField] private CharacterData characterData;
         public CharacterComponents _components;
-        
-        public void Start()
+
+        public void Awake()
         {
             OnLoad();
+        }
+
+        public void Start()
+        {
+           
             Init();
         }
 
@@ -19,5 +24,7 @@ namespace Test.Characters
         }
 
         public virtual void Init() { }
+
+        public virtual void Reset() { }
     }
 }

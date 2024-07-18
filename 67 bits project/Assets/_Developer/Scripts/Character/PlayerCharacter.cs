@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using Test.Animation;
 using Test.Input;
 
@@ -8,12 +7,11 @@ namespace Test.Characters
     {   
         private PlayerAnimationController _animationController;
         private PlayerInputController _inputController;
-        private bool rightHandPunch = true;
 
         public override void OnLoad()
         {
             _inputController = GetComponent<PlayerInputController>();
-            _animationController = GetComponent<PlayerAnimationController>();
+            _animationController = GetComponentInChildren<PlayerAnimationController>();
 
             base.OnLoad();
         }
@@ -24,13 +22,8 @@ namespace Test.Characters
         }
 
         public void Punch()
-        {
-            _animationController.PlayPunchAnimation(rightHandPunch);
-
-            if (rightHandPunch)
-                rightHandPunch = false;
-            else
-                rightHandPunch = true;
+        {           
+            _animationController.PlayPunchAnimation();                                            
         }
     }
 }
