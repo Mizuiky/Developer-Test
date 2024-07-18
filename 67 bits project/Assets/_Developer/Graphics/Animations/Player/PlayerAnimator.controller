@@ -120,7 +120,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PunchingRetargetedLeftHand
+  m_Name: PunchingRetargetedRightHand 1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -299,7 +299,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: punchHand
-    m_EventTreshold: 1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1759969999285972283}
   m_Solo: 0
@@ -321,7 +321,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PunchingRetargetedRightHand
+  m_Name: PunchingRetargetedLeftHand
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -355,10 +355,10 @@ AnimatorStateMachine:
     m_Position: {x: 410, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1759969999285972283}
-    m_Position: {x: 550, y: 160, z: 0}
+    m_Position: {x: 240, y: 160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2738988722442581153}
-    m_Position: {x: 260, y: 160, z: 0}
+    m_Position: {x: 510, y: 160, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -382,7 +382,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: punchHand
-    m_EventTreshold: 0
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2738988722442581153}
   m_Solo: 0
