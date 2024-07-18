@@ -10,17 +10,14 @@ namespace Test.CollisionDetection
 
         public void OnCollisionEnter(Collision collision)
         {
-            if(collision.collider.CompareTag(_tagToCompare))
+            Debug.Log("Colidiu");
+
+            if(collision.gameObject.CompareTag(_tagToCompare))
             {
                 var character = collision.collider.gameObject.GetComponent<SimpleCharacter>();
                 if (character == null) return;
                 character.Punch();
             }
-        }
-
-        public void OnCollisionExit(Collision collision)
-        {
-            _collider.enabled = false;
         }
     }
 }
