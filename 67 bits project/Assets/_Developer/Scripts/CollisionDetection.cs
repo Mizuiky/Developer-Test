@@ -7,16 +7,21 @@ namespace Test.CollisionDetection
     {
         [SerializeField] private string _tagToCompare;
         [SerializeField] private Collider _collider;
+        [SerializeField] private PlayerController _playerController;
+
+        public void Awake()
+        {
+            _playerController = GetComponentInParent<PlayerController>();
+        }
 
         public void OnCollisionEnter(Collision collision)
         {
-            Debug.Log("Colidiu");
-
             if(collision.gameObject.CompareTag(_tagToCompare))
             {
-                var character = collision.collider.gameObject.GetComponent<SimpleCharacter>();
-                if (character == null) return;
-                character.Punch();
+                Debug.Log("Colidiu");
+                var character = collision.collider.gameObject.GetComponentInParent<SimpleCharacter>();
+                if (character == null || character.HasChangedPosition) return;
+                character.ChangePosition(_playerController.StackPivot);
             }
         }
     }
