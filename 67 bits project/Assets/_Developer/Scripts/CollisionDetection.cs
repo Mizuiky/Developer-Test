@@ -21,7 +21,8 @@ namespace Test.CollisionDetection
                 Debug.Log("Colidiu");
                 var character = collision.collider.gameObject.GetComponentInParent<SimpleCharacter>();
                 if (character == null || character.HasChangedPosition) return;
-                character.ChangePosition(_playerController.StackPivot);
+                _playerController.SetStackPosition();
+                character.ChangePosition(_playerController.StackParent, _playerController.StackPosition);
             }
         }
     }
