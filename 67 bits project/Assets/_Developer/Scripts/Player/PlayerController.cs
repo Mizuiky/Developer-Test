@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace Test.Characters
 {
@@ -6,30 +8,42 @@ namespace Test.Characters
     {
         [SerializeField] private Transform _stackParent;
      
-        private Transform _stackPosition;
-        private Transform _newPivot;
+        private Transform _pivot;
+        private Stack<SimpleCharacter> _playerStack;
         private int _stackCount = 0;
-        private float _stackHeight;
-        public Transform StackPosition { get { return _newPivot; } }     
-        public Transform StackParent { get { return _stackParent; } }
+     
+        public Transform StackPosition { get { return _pivot; } }
     
         public override void Init()
         {
             _stackCount = 0;
-            _stackPosition = _stackParent;
-            _newPivot = _stackPosition;
+            _pivot = _stackParent;
+            _playerStack = new Stack<SimpleCharacter>();
             base.Init();
         }
 
-        public void SetStackPosition()
+        public override void Reset()
         {
-            if(_stackCount == 0)
-                _stackHeight = _stackParent.localPosition.y;
-            else
-                _stackHeight = _stackParent.localPosition.y * _stackCount;
-
-            _newPivot.position = new Vector3(_stackParent.position.x, _stackHeight, _stackParent.position.z);
-            _stackCount++;
+            base.Reset();
+            _playerStack.Clear();
         }
+
+        #region PlayerStack
+        public void SetStackPosition(Transform newPivot)
+        {
+            _pivot = newPivot;
+        }
+
+        public void AddToStack(SimpleCharacter character)
+        {
+            _stackCount++;
+            _playerStack.Push(character);
+        }
+
+        public SimpleCharacter RemoveFromStack(SimpleCharacter character)
+        {
+            return _playerStack.Pop();
+        }
+        #endregion
     }
 }
