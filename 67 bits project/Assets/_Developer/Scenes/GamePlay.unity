@@ -899,7 +899,7 @@ GameObject:
   - component: {fileID: 1000794925}
   - component: {fileID: 1000794924}
   m_Layer: 0
-  m_Name: Plane
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1376,16 +1376,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5391940057257517445, guid: 0589ecb51d0569b499d85b1d11f9c2c6,
-        type: 3}
-      propertyPath: m_Height
-      value: 1.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 5391940057257517445, guid: 0589ecb51d0569b499d85b1d11f9c2c6,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.63
-      objectReference: {fileID: 0}
     - target: {fileID: 7214712672451390041, guid: 0589ecb51d0569b499d85b1d11f9c2c6,
         type: 3}
       propertyPath: m_Name
@@ -1586,8 +1576,8 @@ SceneRoots:
   - {fileID: 27526440}
   - {fileID: 1000794927}
   - {fileID: 1138409180988117453}
-  - {fileID: 598676125}
   - {fileID: 1704557351242105685}
   - {fileID: 914948249}
   - {fileID: 1909432287}
   - {fileID: 1072176357}
+  - {fileID: 598676125}
