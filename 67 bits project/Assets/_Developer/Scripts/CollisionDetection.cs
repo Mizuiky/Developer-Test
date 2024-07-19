@@ -18,11 +18,12 @@ namespace Test.CollisionDetection
         {
             if(collision.gameObject.CompareTag(_tagToCompare))
             {
-                Debug.Log("Colidiu");
                 var character = collision.collider.gameObject.GetComponentInParent<SimpleCharacter>();
                 if (character == null || character.HasChangedPosition) return;
-                _playerController.SetStackPosition();
-                character.ChangePosition(_playerController.StackParent, _playerController.StackPosition);
+
+                character.ChangePosition(_playerController.StackPosition);
+                _playerController.SetStackPosition(character.Pivot);
+                _playerController.AddToStack(character);
             }
         }
     }
