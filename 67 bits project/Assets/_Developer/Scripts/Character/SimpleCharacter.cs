@@ -1,19 +1,19 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements;
-using Unity.VisualScripting;
 
 namespace Test.Characters
 {
     public class SimpleCharacter : MonoBehaviour
     {
         [SerializeField] private SimpleCharacterData _data;
+        [SerializeField] private Transform _stackPivot;
 
         private float _timeToMove;
         private float _elapsedTime;
         private bool _hasChangedPosition;
-        private Vector3 _position;
+
         public bool HasChangedPosition { get { return _hasChangedPosition; } }
+        public Transform Pivot { get { return _stackPivot; } }
 
         public void Start()
         {
@@ -26,27 +26,24 @@ namespace Test.Characters
             _hasChangedPosition = false;
         }
 
-        public void ChangePosition(Transform parent, Transform destination)
+        public void ChangePosition(Transform parent)
         {
-            Debug.Log("Change Position");
             _hasChangedPosition = true;
             transform.SetParent(parent, false);
-            _position = destination.position;
-            StartCoroutine(ChangePositionCoroutine(destination.localPosition));
+            StartCoroutine(ChangePositionCoroutine());
         }
 
-        public IEnumerator ChangePositionCoroutine(Vector3 destination)
+        public IEnumerator ChangePositionCoroutine()
         {
             while(_elapsedTime < _data.timeToMove)
             {
                 Debug.Log(_elapsedTime);
                 _elapsedTime += Time.deltaTime;
-                transform.localPosition = Vector3.Lerp(transform.localPosition, destination, _elapsedTime / _data.timeToMove);           
+                transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, _elapsedTime / _data.timeToMove);           
                 yield return null;
             }
 
-            Debug.Log("depois de finalizar");
-            transform.position = _position;          
+            transform.localPosition = Vector3.zero;          
         }
     }
 }
