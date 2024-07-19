@@ -10,12 +10,10 @@ namespace Test.Characters
         public AnimationBase animationBase { get; private set; }
         public MovementController movementController { get; private set; }
         public CharacterBase character { get; private set; }
-        public  CharacterData characterData { get; private set; }
 
-        public CharacterComponents(CharacterBase characterBase, CharacterData data)
+        public CharacterComponents(CharacterBase characterBase)
         {
             character = characterBase;
-            characterData = data;
             rb = characterBase.GetComponent<Rigidbody>();
             animationBase = characterBase.GetComponentInChildren<AnimationBase>();
             movementController = characterBase.GetComponent<MovementController>();

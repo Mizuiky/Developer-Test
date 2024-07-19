@@ -6,7 +6,7 @@ namespace Test.Movement
 {
     public class MovementController : MonoBehaviour
     {
-        private CharacterData _data;
+        private PlayerData _data;
         private PlayerAnimationController _animationController;
         private Rigidbody _rb;
         private Quaternion _rotation;
@@ -23,9 +23,13 @@ namespace Test.Movement
         public void Init(CharacterComponents character)
         {
             _direction = Vector3.zero;
-            _data = character.characterData;
             _animationController = character.animationBase.GetComponent<PlayerAnimationController>();
             _rb = character.rb;
+        }
+
+        public void SetData(PlayerData data)
+        {
+            _data = data;
         }
 
         public void Reset()
