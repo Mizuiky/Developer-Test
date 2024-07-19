@@ -138,7 +138,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.115
   m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.01, z: 0}
@@ -291,7 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5030454618692345585}
   - component: {fileID: 5391940057257517445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3729050339554242507}
   m_Layer: 0
-  m_Name: CharacterStack
+  m_Name: StackParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,7 +361,7 @@ Transform:
   m_GameObject: {fileID: 1623291174272094684}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35, y: 1.277, z: -0.05}
+  m_LocalPosition: {x: 0.02, y: 1.27, z: 0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -864,7 +864,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.115
   m_Height: 0.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.01, z: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 7888572225808281883}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1316,8 +1316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: b0e1bc4ffb6358f46a9650f7629bfe0c, type: 2}
-  _characterStackParent: {fileID: 3729050339554242507}
-  _stackPivot: {fileID: 0}
+  _stackParent: {fileID: 3729050339554242507}
 --- !u!114 &6948220567244490470
 MonoBehaviour:
   m_ObjectHideFlags: 0
