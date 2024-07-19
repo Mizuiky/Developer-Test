@@ -4,12 +4,17 @@ namespace Test.Characters
 {
     public class CharacterBase : MonoBehaviour
     {
-        [SerializeField] private CharacterComponents _components;
         [SerializeField] private CharacterData characterData;
+        public CharacterComponents _components;
+
+        public void Awake()
+        {
+            OnLoad();
+        }
 
         public void Start()
         {
-            OnLoad();
+           
             Init();
         }
 
@@ -19,5 +24,7 @@ namespace Test.Characters
         }
 
         public virtual void Init() { }
+
+        public virtual void Reset() { }
     }
 }

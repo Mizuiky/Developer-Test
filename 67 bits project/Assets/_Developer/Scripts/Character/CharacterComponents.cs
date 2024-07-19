@@ -7,7 +7,7 @@ namespace Test.Characters
     public class CharacterComponents
     {
         public Rigidbody rb { get; private set; }
-        public AnimationController animatorController { get; private set; }
+        public AnimationBase animationBase { get; private set; }
         public MovementController movementController { get; private set; }
         public CharacterBase character { get; private set; }
         public  CharacterData characterData { get; private set; }
@@ -17,7 +17,7 @@ namespace Test.Characters
             character = characterBase;
             characterData = data;
             rb = characterBase.GetComponent<Rigidbody>();
-            animatorController = characterBase.GetComponent<AnimationController>();
+            animationBase = characterBase.GetComponentInChildren<AnimationBase>();
             movementController = characterBase.GetComponent<MovementController>();
             movementController.Init(this);         
         }

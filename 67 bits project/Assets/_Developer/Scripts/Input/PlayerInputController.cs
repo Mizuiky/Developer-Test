@@ -1,3 +1,4 @@
+using Test.Characters;
 using Test.Movement;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,7 +9,7 @@ namespace Test.Input
     {
         private Vector2 _direction;
         private PlayerControls _playerControls;
-        private MovementController _movementController;
+        private PlayerCharacter _character;
 
         private void Awake()
         {
@@ -22,7 +23,7 @@ namespace Test.Input
 
         public void Init()
         {
-            _movementController = GetComponent<MovementController>();
+            _character = GetComponent<PlayerCharacter>();
 
             _playerControls.Player.Move.performed += Move;
             _playerControls.Player.Move.canceled += CancelMovement;
@@ -33,18 +34,18 @@ namespace Test.Input
         private void Move(InputAction.CallbackContext context)
         {
             _direction = context.ReadValue<Vector2>();
-            _movementController.SetInput(_direction);
+            _character._components.movementController.SetInput(_direction);
         }
 
         private void CancelMovement(InputAction.CallbackContext context)
         {
             _direction = new Vector2(0f, 0f);
-            _movementController.SetInput(_direction);
+            _character._components.movementController.SetInput(_direction);
         }
 
         private void Punch(InputAction.CallbackContext context)
         {
-
+            _character.Punch();
         }
 
         private void OnDisable()
