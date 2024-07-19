@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Test.Characters
 {
-    [CreateAssetMenu(menuName = "Data/Character")]
-    public class CharacterData : ScriptableObject
+    [CreateAssetMenu(menuName = "Data/Player")]
+    public class PlayerData : ScriptableObject
     {
         public string characterName;
         public float maxSpeed;
