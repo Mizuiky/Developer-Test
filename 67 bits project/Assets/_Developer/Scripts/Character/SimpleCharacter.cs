@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Test.Event;
 
 namespace Test.Characters
 {
@@ -7,6 +8,7 @@ namespace Test.Characters
     {
         [SerializeField] private SimpleCharacterData _data;
         [SerializeField] private Transform _stackPivot;
+        public GameEvent _onCharacterAmountChanged;
 
         private float _timeToMove;
         private float _elapsedTime;

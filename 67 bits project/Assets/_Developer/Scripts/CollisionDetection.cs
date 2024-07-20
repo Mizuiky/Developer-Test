@@ -24,6 +24,7 @@ namespace Test.CollisionDetection
                 character.ChangePosition(_playerController.StackPosition);
                 _playerController.SetStackPosition(character.Pivot);
                 _playerController.AddToStack(character);
+                character._onCharacterAmountChanged?.InvokeEvent();
             }
         }
     }

@@ -1232,6 +1232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: b42c3ff56064dfa4eb2ed8d4ea3db189, type: 2}
   _stackPivot: {fileID: 7340608331167676904}
+  _onCharacterAmountChanged: {fileID: 11400000, guid: 30ec33b1c790fa54c8e8b476f379e1b4,
+    type: 2}
 --- !u!1 &6607044506232600290
 GameObject:
   m_ObjectHideFlags: 0
