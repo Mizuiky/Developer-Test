@@ -111,7 +111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.000019195, y: 19.8}
+  m_AnchoredPosition: {x: 0.000019073486, y: 19.8}
   m_SizeDelta: {x: 79.6557, y: 24.0919}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5314010865445256602
@@ -341,8 +341,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3363908595889429637}
   - component: {fileID: 5314712390055124204}
+  - component: {fileID: -7568311603414567510}
   m_Layer: 0
-  m_Name: ColorBlue - ShopItem
+  m_Name: Color - ShopItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,6 +380,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6559412120147007451}
   m_CullTransparentMesh: 1
+--- !u!114 &-7568311603414567510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6559412120147007451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c38441514bda6a3498bdf473d96350a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemName: {fileID: 6549774791568671570}
+  _priceText: {fileID: 5334686917646292683}
+  _priceButton: {fileID: 5298398296251532392}
+  _colorItemData: {fileID: 0}
+  _onColorSold: {fileID: 11400000, guid: e753b15aa759ac24699c823409a68074, type: 2}
+  _onColorUse: {fileID: 11400000, guid: cfe715537a8ac5c4097d8d58555b924f, type: 2}
 --- !u!1 &7083709044293908866
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000019558, y: -22.9}
+  m_AnchoredPosition: {x: 0, y: -22.900002}
   m_SizeDelta: {x: 100.3206, y: 26.418808}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1216039854319388024
@@ -472,8 +491,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -548,8 +567,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 80.5}
-  m_SizeDelta: {x: 0, y: 161}
+  m_AnchoredPosition: {x: -0.20780182, y: 80.0845}
+  m_SizeDelta: {x: -8.7259, y: 153.5207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7207659075980585400
 CanvasRenderer:
