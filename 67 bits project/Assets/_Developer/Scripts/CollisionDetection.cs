@@ -9,6 +9,8 @@ namespace Test.CollisionDetection
         [SerializeField] private Collider _collider;
         [SerializeField] private PlayerController _playerController;
 
+        private bool _hasAddedCharacter;
+
         public void Awake()
         {
             _playerController = GetComponentInParent<PlayerController>();
@@ -23,7 +25,10 @@ namespace Test.CollisionDetection
 
                 character.ChangePosition(_playerController.StackPosition);
                 _playerController.SetStackPosition(character.Pivot);
-                _playerController.AddToStack(character);
+                
+                _hasAddedCharacter = _playerController.AddToStack(character);
+                if (!_hasAddedCharacter) return;
+
                 character._onCharacterAmountChanged?.InvokeEvent();
             }
         }
