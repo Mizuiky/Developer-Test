@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using Test.Shop;
 
 namespace Test.Color
 {
@@ -22,34 +23,29 @@ namespace Test.Color
 
         private SkinnedMeshRenderer _model;
 
-        public void SetColor(ColorDataType type, ColorData data, int colorIndex)
+        public void SetBodyColor(ColorItemData data)
         {
-            _model = SetModel(type);
+            _model = GetModel(data.colordataType);
             if (_model == null) return;
 
-            Material material = data._colors.FirstOrDefault(x => x.colorIndex == colorIndex).color;
+            Material material = _bodyColors._colors.FirstOrDefault(x => x.colorIndex == data.colorIndex).color;
             if (material == null) return;
             _body.material = material;
         }
 
-        private SkinnedMeshRenderer SetModel(ColorDataType type)
+        private SkinnedMeshRenderer GetModel(ColorDataType type)
         {
-            _model = null;
-
             switch (type)
             {
                 case ColorDataType.Body:
-                    _model = _body;
-                    break;
+                    return _body;
                 case ColorDataType.Shirt:
-                    _model = _shirt;
-                    break;
+                    return _shirt;
                 case ColorDataType.Pants:
-                    _model = _pants;
-                    break;
+                    return _pants;
             }
 
-            return _model;
+            return null;
         }
     }
 }
