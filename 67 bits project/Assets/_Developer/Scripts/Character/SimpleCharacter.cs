@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Test.Event;
 
 namespace Test.Characters
 {
@@ -7,6 +8,9 @@ namespace Test.Characters
     {
         [SerializeField] private SimpleCharacterData _data;
         [SerializeField] private Transform _stackPivot;
+
+        public GameEvent _onCharacterAmountChanged;
+        public GameEventObject _onCharacterSold;
 
         private float _timeToMove;
         private float _elapsedTime;
@@ -20,7 +24,7 @@ namespace Test.Characters
             Init();
         }
 
-        public void Init()
+        private void Init()
         {
             _elapsedTime = 0f;
             _hasChangedPosition = false;
@@ -33,7 +37,7 @@ namespace Test.Characters
             StartCoroutine(ChangePositionCoroutine());
         }
 
-        public IEnumerator ChangePositionCoroutine()
+        private IEnumerator ChangePositionCoroutine()
         {
             while(_elapsedTime < _data.timeToMove)
             {
@@ -44,6 +48,15 @@ namespace Test.Characters
             }
 
             transform.localPosition = Vector3.zero;          
+        }
+
+        public void SellCharacter()
+        {
+            transform.SetParent(null);
+            //particle
+            //audio
+            _onCharacterSold.Invoke(_data.characterValue);
+            Destroy(gameObject);
         }
     }
 }

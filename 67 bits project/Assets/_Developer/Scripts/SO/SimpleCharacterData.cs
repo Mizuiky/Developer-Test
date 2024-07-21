@@ -8,6 +8,9 @@ namespace Test.Characters
         [Header("Time do move to player stack pivot")]
         public float timeToMove;
 
+        [Header("Character value to be sold")]
+        public float characterValue;
+
         [Header("Values to Manage Inertia")]
 
         [Space(8)]
