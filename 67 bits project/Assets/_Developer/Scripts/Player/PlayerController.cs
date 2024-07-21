@@ -1,21 +1,21 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace Test.Characters
 {
     public class PlayerController : PlayerCharacter
     {
         [SerializeField] private Transform _stackParent;
-     
+        [SerializeField] private float _timeToSell;
+
         private Transform _pivot;
         private Stack<SimpleCharacter> _playerStack;
-        private int _stackCount = 0;
      
         public Transform StackPosition { get { return _pivot; } }
     
         public override void Init()
         {
-            _stackCount = 0;
             _pivot = _stackParent;
             _playerStack = new Stack<SimpleCharacter>();
             base.Init();
@@ -35,14 +35,25 @@ namespace Test.Characters
 
         public void AddToStack(SimpleCharacter character)
         {
-            _stackCount++;
             _playerStack.Push(character);
         }
 
-        public SimpleCharacter RemoveFromStack(SimpleCharacter character)
+        public void RemoveFromStack()
         {
-            return _playerStack.Pop();
+            Debug.Log("stack number = " + _playerStack.Count);
+            if (_playerStack.Count == 0) return;
+            StartCoroutine(RemoveFromStackCoroutine());                  
         }
+
+        private IEnumerator RemoveFromStackCoroutine()
+        {
+            while (_playerStack.Count > 0)
+            {
+               _playerStack.Pop().SellCharacter();
+                yield return new WaitForSeconds(_timeToSell);
+            }
+        }
+
         #endregion
     }
 }
