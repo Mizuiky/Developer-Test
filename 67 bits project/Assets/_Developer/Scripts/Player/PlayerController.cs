@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using Test.Color;
 
 namespace Test.Characters
 {
@@ -25,6 +26,16 @@ namespace Test.Characters
         {
             base.Reset();
             _playerStack.Clear();
+        }
+
+        public void Punch()
+        {
+            _animationController.PlayPunchAnimation();
+        }
+
+        public void ChangeColor(ColorDataType type, ColorData data, int colorIndex)
+        {
+            _colorController.SetColor(type, data, colorIndex);
         }
 
         #region PlayerStack

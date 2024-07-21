@@ -9,7 +9,7 @@ namespace Test.Input
     {
         private Vector2 _direction;
         private PlayerControls _playerControls;
-        private PlayerCharacter _character;
+        private PlayerController _player;
 
         private void Awake()
         {
@@ -23,7 +23,7 @@ namespace Test.Input
 
         public void Init()
         {
-            _character = GetComponent<PlayerCharacter>();
+            _player = GetComponent<PlayerController>();
 
             _playerControls.Player.Move.performed += Move;
             _playerControls.Player.Move.canceled += CancelMovement;
@@ -34,18 +34,18 @@ namespace Test.Input
         private void Move(InputAction.CallbackContext context)
         {
             _direction = context.ReadValue<Vector2>();
-            _character._components.movementController.SetInput(_direction);
+            _player._components.movementController.SetInput(_direction);
         }
 
         private void CancelMovement(InputAction.CallbackContext context)
         {
             _direction = new Vector2(0f, 0f);
-            _character._components.movementController.SetInput(_direction);
+            _player._components.movementController.SetInput(_direction);
         }
 
         private void Punch(InputAction.CallbackContext context)
         {
-            _character.Punch();
+            _player.Punch();
         }
 
         private void OnDisable()
