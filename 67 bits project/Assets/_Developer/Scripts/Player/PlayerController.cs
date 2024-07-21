@@ -2,22 +2,32 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using Test.Color;
+using Test.Event;
+using Test.Shop;
 
 namespace Test.Characters
 {
     public class PlayerController : PlayerCharacter
     {
         [SerializeField] private Transform _stackParent;
+        [SerializeField] private GameEventObject _onColorUse;
         [SerializeField] private float _timeToSell;
 
         private Transform _pivot;
         private Stack<SimpleCharacter> _playerStack;
+        private int _maxStackNumber;
      
         public Transform StackPosition { get { return _pivot; } }
-    
+
+        public void OnEnable()
+        {
+            _onColorUse.Subscribe(ChangeColor);
+        }
+
         public override void Init()
         {
             _pivot = _stackParent;
+            _maxStackNumber = _playerData.maxStackAmount;
             _playerStack = new Stack<SimpleCharacter>();
             base.Init();
         }
@@ -33,25 +43,32 @@ namespace Test.Characters
             _animationController.PlayPunchAnimation();
         }
 
-        public void ChangeColor(ColorDataType type, ColorData data, int colorIndex)
+        public void ChangeColor(object[] data)
         {
-            _colorController.SetColor(type, data, colorIndex);
+            _colorController.SetBodyColor((ColorItemData)data[0]);
         }
 
         #region PlayerStack
+
+        public void IncreaseStackNumber(int amount)
+        {
+            _maxStackNumber = amount;
+        }
+
         public void SetStackPosition(Transform newPivot)
         {
             _pivot = newPivot;
         }
 
-        public void AddToStack(SimpleCharacter character)
+        public bool AddToStack(SimpleCharacter character)
         {
+            if (_playerStack.Count == _maxStackNumber) return false;
             _playerStack.Push(character);
+            return true;
         }
 
         public void RemoveFromStack()
         {
-            Debug.Log("stack number = " + _playerStack.Count);
             if (_playerStack.Count == 0) return;
             StartCoroutine(RemoveFromStackCoroutine());                  
         }
@@ -66,5 +83,11 @@ namespace Test.Characters
         }
 
         #endregion
+
+
+        public void OnDisable()
+        {
+            _onColorUse.Unsubscribe(ChangeColor);
+        }
     }
 }

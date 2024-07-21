@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 8985970783649748767}
   - component: {fileID: 693801402228863265}
   - component: {fileID: 6075072757630928965}
+  - component: {fileID: 3977784242950358408}
   m_Layer: 0
   m_Name: Character_Boy
   m_TagString: Untagged
@@ -1200,6 +1201,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab27dde369c0514fbce1fc9bc1e44b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3977784242950358408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356568650868951447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadddee45d3fa594b832aa935fa8f168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _body: {fileID: 3593743135789257559}
+  _shirt: {fileID: 2273149186204028765}
+  _pants: {fileID: 2273149186204028765}
+  _bodyColors: {fileID: 11400000, guid: 666f47191e106be49bbf8b83e7d34769, type: 2}
+  _shirtColors: {fileID: 11400000, guid: 449097975b79a9b4c8d56373dd8c0dea, type: 2}
+  _pantsColors: {fileID: 11400000, guid: 4058e8a2d7340ec4fa2bc6ff4d22362b, type: 2}
 --- !u!1 &6617642869994913464
 GameObject:
   m_ObjectHideFlags: 0

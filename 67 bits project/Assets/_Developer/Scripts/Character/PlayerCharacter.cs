@@ -7,7 +7,7 @@ namespace Test.Characters
 {
     public class PlayerCharacter : CharacterBase
     {
-        [SerializeField] private PlayerData _playerData;
+        [SerializeField] protected PlayerData _playerData;
 
         protected PlayerAnimationController _animationController;
         protected ColorController _colorController;
