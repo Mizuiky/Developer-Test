@@ -204,7 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ccfbfedba7df24188915ba62ee01c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMoney: {fileID: 2555332310156638316}
+  _moneyText: {fileID: 2555332310156638316}
+  _playerMoney: {fileID: 11400000, guid: fd192c86d7d59854a9122f8728dd280d, type: 2}
 --- !u!1 &5014876781995688125
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +692,7 @@ MonoBehaviour:
       - m_Target: {fileID: 5825691423504795631}
         m_TargetAssemblyTypeName: Test.Shop.ShopController, Assembly-CSharp
         m_MethodName: Open
-        m_Mode: 6
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -808,6 +809,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3316064557248086764, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
+        type: 3}
+      propertyPath: _onStackAmountChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: d77375e9965f0dd449d4d0227c687197,
+        type: 2}
     - target: {fileID: 3487558586680787734, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
         type: 3}
       propertyPath: m_Name
@@ -833,6 +840,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4243920630555851222, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
+        type: 3}
+      propertyPath: _onStackAmountChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: d77375e9965f0dd449d4d0227c687197,
+        type: 2}
     - target: {fileID: 4428334009470010838, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -893,6 +906,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5106574633206519539, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
+        type: 3}
+      propertyPath: _onStackAmountChanged
+      value: 
+      objectReference: {fileID: 11400000, guid: d77375e9965f0dd449d4d0227c687197,
+        type: 2}
     - target: {fileID: 5119099661793396626, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
         type: 3}
       propertyPath: m_Pivot.x
@@ -992,6 +1011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5259857459928839984, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
+        type: 3}
+      propertyPath: m_Name
+      value: StackLevelUp
       objectReference: {fileID: 0}
     - target: {fileID: 5883883544994102630, guid: cb5af2b5e1d3cea47a23eccc1ff95dc4,
         type: 3}

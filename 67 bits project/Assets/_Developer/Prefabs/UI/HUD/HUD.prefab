@@ -154,8 +154,8 @@ RectTransform:
   - {fileID: 3925951739624513561}
   - {fileID: 1017648463600857414}
   - {fileID: 5941089789214685080}
-  - {fileID: 7144288997198123834}
   - {fileID: 3905564156207970147}
+  - {fileID: 7144288997198123834}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -176,9 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _money: {fileID: 8244208399794161786}
-  _charactersQtd: {fileID: 7848457076121566599}
+  _currentCharacterAmount: {fileID: 7848457076121566599}
+  _currentMaxCharacterAmount: {fileID: 3496700335690464089}
   _moneyValue: {fileID: 11400000, guid: fd192c86d7d59854a9122f8728dd280d, type: 2}
-  _characterQtdValue: {fileID: 11400000, guid: 3bfcff5779b31ed42b17b96776f9c43e, type: 2}
+  _currentCharacterQtd: {fileID: 11400000, guid: 9bfb7535ec3c0794ea2eb63b9b3a432d,
+    type: 2}
+  _maxCharacterQtd: {fileID: 11400000, guid: d5df62cda62a9fb45b81743242bfed22, type: 2}
 --- !u!1 &848214093465360674
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3905564156207970147}
   - component: {fileID: 8219904592174563909}
+  - component: {fileID: 2902901432803442553}
   m_Layer: 0
   m_Name: PauseMenuButton
   m_TagString: Untagged
@@ -225,6 +229,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 848214093465360674}
   m_CullTransparentMesh: 1
+--- !u!114 &2902901432803442553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848214093465360674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Gamepad>/dpad/up
 --- !u!1 &881739598206849033
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,7 +253,7 @@ GameObject:
   - component: {fileID: 2055896655678000505}
   - component: {fileID: 5197361867727327248}
   - component: {fileID: 3145350265329421055}
-  - component: {fileID: 452458877238134634}
+  - component: {fileID: 3076140681531761933}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -301,7 +318,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &452458877238134634
+--- !u!114 &3076140681531761933
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,32 +327,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 881739598206849033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 38
-  m_DynamicOriginRange: 100
-  m_ControlPath: <Gamepad>/leftStick
-  m_Behaviour: 0
-  m_UseIsolatedInputActions: 0
-  m_PointerDownAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 53031c1a-3cb4-40e8-8eb0-cf9d5c8877db
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  m_PointerMoveAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6ee3b6a8-1a75-452b-9c79-baa6efadf7ca
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  m_ControlPath: <Gamepad>/dpad/down
 --- !u!1 &2046243530797904903
 GameObject:
   m_ObjectHideFlags: 0
