@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HUD
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 50
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 7c71fc24f10a18448b49d9919e78ab69, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 64e66d50a131a4abaa8d4ebe129b2b72: 21300000
+    - f0278260aa10dda4bad10811c398d60c: 21300000
+    - 83adf99002fa21b9f8602d8d97948c61: 21300000
+    - 5727c053eb218419eb761a0483da6ebd: 21300000
+    - 31556e634a9844453a3799478e2f1b39: 21300000
+    - 9af9ec3401f7a4d4b9ef3b7169554431: 21300000
+    - eda625543fbb24202bd25e859c08707d: 21300000
+    - 0292bb946198207e9b17503e15966465: 21300000
+    - 27cd5055912c9bf45b3d4ce4254a9bf7: 21300000
+    - f29be716a25ab4cd48381e56f98281da: 21300000
+    - 25e3acd6c72d93a43906e5ecc410fe55: 21300000
+    - fc7702076cb224b1eb3567d7b3b2bb93: 21300000
+    - 0c024c875b7ef49ed9b3daed96300760: 21300000
+    - 041db497dc0534e44bf357d21ff8e084: 21300000
+    - 8a41754ab5a5c47b2ba1ada18f70572c: 21300000
+    - e2e3508a5f78a13478d11608e46e2f26: 21300000
+    - fff04cca8bd0c40a1bec4d0c15626eef: 21300000
+    - 098b426cb73dd953886efddf38416b89: 21300000
+    - f38451fc2a0bd4e1799584952d5deb9f: 21300000
+    - ec6bad6ecc4ab4a8981b28d7375bb6ad: 21300000
+    - 19be5a5f839184605ac1e09eda413161: 21300000
+    - 21a720df3e95d4e9cbf40d621813f806: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 64e66d50a131a4abaa8d4ebe129b2b72, type: 3}
+  - {fileID: 21300000, guid: f0278260aa10dda4bad10811c398d60c, type: 3}
+  - {fileID: 21300000, guid: 83adf99002fa21b9f8602d8d97948c61, type: 3}
+  - {fileID: 21300000, guid: 5727c053eb218419eb761a0483da6ebd, type: 3}
+  - {fileID: 21300000, guid: 31556e634a9844453a3799478e2f1b39, type: 3}
+  - {fileID: 21300000, guid: 9af9ec3401f7a4d4b9ef3b7169554431, type: 3}
+  - {fileID: 21300000, guid: eda625543fbb24202bd25e859c08707d, type: 3}
+  - {fileID: 21300000, guid: 0292bb946198207e9b17503e15966465, type: 3}
+  - {fileID: 21300000, guid: 27cd5055912c9bf45b3d4ce4254a9bf7, type: 3}
+  - {fileID: 21300000, guid: f29be716a25ab4cd48381e56f98281da, type: 3}
+  - {fileID: 21300000, guid: 25e3acd6c72d93a43906e5ecc410fe55, type: 3}
+  - {fileID: 21300000, guid: fc7702076cb224b1eb3567d7b3b2bb93, type: 3}
+  - {fileID: 21300000, guid: 0c024c875b7ef49ed9b3daed96300760, type: 3}
+  - {fileID: 21300000, guid: 041db497dc0534e44bf357d21ff8e084, type: 3}
+  - {fileID: 21300000, guid: 8a41754ab5a5c47b2ba1ada18f70572c, type: 3}
+  - {fileID: 21300000, guid: e2e3508a5f78a13478d11608e46e2f26, type: 3}
+  - {fileID: 21300000, guid: fff04cca8bd0c40a1bec4d0c15626eef, type: 3}
+  - {fileID: 21300000, guid: 098b426cb73dd953886efddf38416b89, type: 3}
+  - {fileID: 21300000, guid: f38451fc2a0bd4e1799584952d5deb9f, type: 3}
+  - {fileID: 21300000, guid: ec6bad6ecc4ab4a8981b28d7375bb6ad, type: 3}
+  - {fileID: 21300000, guid: 19be5a5f839184605ac1e09eda413161, type: 3}
+  - {fileID: 21300000, guid: 21a720df3e95d4e9cbf40d621813f806, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Btn_Rectangle00_n_Yellow
+  - flat_icon_close
+  - joystick
+  - ListFrame03_White1
+  - Btn_MenuButton_Rectangle03_White1
+  - Label_Tag00_s_Red
+  - CardFrame01_BackFrame_d
+  - circle-border
+  - person
+  - Itemicon_Money
+  - stack
+  - DailyFrame01_s_Yellow1
+  - Itemicon_Home_Shop_1
+  - Btn_Rectangle03_Green
+  - SkillFrame01_3
+  - flat_icon_menu
+  - CardFrame02,03_BackFrame_n_Yellow
+  - circle
+  - ItemFrame01_White4
+  - Itemicon_Home_Shop_0
+  - DailyFrame01_White1
+  - Btn_IconButton_Circle_121_White
+  m_RenderDataMap: {}
+  m_Tag: HUD
+  m_IsVariant: 0
