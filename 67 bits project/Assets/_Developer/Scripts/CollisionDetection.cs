@@ -23,13 +23,12 @@ namespace Test.CollisionDetection
                 var character = collision.collider.gameObject.GetComponentInParent<SimpleCharacter>();
                 if (character == null || character.HasChangedPosition) return;
 
-                character.ChangePosition(_playerController.StackPosition);
-                _playerController.SetStackPosition(character.Pivot);
-                
                 _hasAddedCharacter = _playerController.AddToStack(character);
                 if (!_hasAddedCharacter) return;
 
-                character._onCharacterAmountChanged?.InvokeEvent();
+                character.ChangePosition(_playerController.StackPosition);
+                _playerController.SetStackPosition(character.Pivot);                         
+                _playerController.IncreaseCurrentCharacterQtd(true);
             }
         }
     }
