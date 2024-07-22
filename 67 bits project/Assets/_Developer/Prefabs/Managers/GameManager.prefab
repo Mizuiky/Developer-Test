@@ -44,8 +44,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0c77beac162244b8274b9dbc1aafeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _money: {fileID: 11400000, guid: fd192c86d7d59854a9122f8728dd280d, type: 2}
-  _charactersAmount: {fileID: 11400000, guid: 3bfcff5779b31ed42b17b96776f9c43e, type: 2}
-  _moneyEvent: {fileID: 11400000, guid: dfd8837473e7c5b428bc267aef51cac1, type: 2}
-  _characterAmountEvent: {fileID: 11400000, guid: 30ec33b1c790fa54c8e8b476f379e1b4,
-    type: 2}

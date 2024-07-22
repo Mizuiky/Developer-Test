@@ -171,7 +171,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049927759680579897}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -278,7 +278,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326815506017233699}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -506,7 +506,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4873985593174340231}
-  - component: {fileID: 3437304593604814582}
   - component: {fileID: 8344156200132626878}
   m_Layer: 3
   m_Name: Body
@@ -530,33 +529,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3494772225277826077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &3437304593604814582
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774907790304580642}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!65 &8344156200132626878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -683,8 +655,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6689120428281655890}
   - component: {fileID: 1837249743831080049}
-  - component: {fileID: 1164830072661718386}
-  - component: {fileID: 8100119703756485788}
   m_Layer: 3
   m_Name: HandCollider
   m_TagString: Character
@@ -730,48 +700,6 @@ CapsuleCollider:
   m_Height: 0.84
   m_Direction: 1
   m_Center: {x: 0, y: 0.01, z: 0}
---- !u!114 &1164830072661718386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187528777547197237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63d64643e14d5c40980d3576ed2d0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tagToCompare: Character
-  _collider: {fileID: 1837249743831080049}
-  _playerController: {fileID: 0}
---- !u!54 &8100119703756485788
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4187528777547197237}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 2
 --- !u!1 &4878056776693987008
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,8 +742,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5443019411158131221}
   - component: {fileID: 5097049087849248570}
-  - component: {fileID: 6600081226593653188}
-  - component: {fileID: 258943088747337329}
   m_Layer: 3
   m_Name: HandCollider
   m_TagString: Character
@@ -861,48 +787,6 @@ CapsuleCollider:
   m_Height: 0.84
   m_Direction: 1
   m_Center: {x: 0, y: 0.01, z: 0}
---- !u!114 &6600081226593653188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4957688950210276960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63d64643e14d5c40980d3576ed2d0ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tagToCompare: Character
-  _collider: {fileID: 5097049087849248570}
-  _playerController: {fileID: 0}
---- !u!54 &258943088747337329
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4957688950210276960}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 2
 --- !u!1 &5174745314545597015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +922,7 @@ SkinnedMeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5506882330945861204}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1165,7 +1049,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7506508290293047611}
-  - component: {fileID: 8081945839383727680}
   - component: {fileID: 5296919053345093410}
   m_Layer: 3
   m_Name: RagdollCharacter
@@ -1191,33 +1074,6 @@ Transform:
   - {fileID: 7352953623584311277}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &8081945839383727680
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363399942745734475}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 1
 --- !u!114 &5296919053345093410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,7 +1391,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6593479476952089807}
   - component: {fileID: 8594959459548742276}
-  - component: {fileID: 450237751156845104}
   m_Layer: 3
   m_Name: Head
   m_TagString: Character
@@ -1579,33 +1434,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.33817542
   m_Center: {x: 0.005360961, y: 0.014230132, z: 0.0053027873}
---- !u!54 &450237751156845104
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9191887407860434581}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &9214282600733747600
 GameObject:
   m_ObjectHideFlags: 0
