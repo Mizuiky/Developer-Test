@@ -2,7 +2,7 @@ using System.Linq;
 using UnityEngine;
 using Test.Shop;
 
-namespace Test.Color
+namespace Test.Colors
 {
     public enum ColorDataType
     {

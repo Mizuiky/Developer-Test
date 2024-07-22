@@ -1,14 +1,13 @@
 using UnityEngine;
 
-public class ProjectGameManager: MonoBehaviour
+namespace Test.Manager
 {
-    public void Start()
+    public class ProjectGameManager : MonoBehaviour
     {
-        Init();
-    }
-
-    private void Init()
-    {
-        
+        public void Start()
+        {
+            Init();
+        }
+        private void Init() { }
     }
 }

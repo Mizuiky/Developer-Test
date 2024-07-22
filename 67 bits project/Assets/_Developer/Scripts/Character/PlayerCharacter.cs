@@ -1,5 +1,5 @@
 using Test.Animation;
-using Test.Color;
+using Test.Colors;
 using Test.Input;
 using UnityEngine;
 

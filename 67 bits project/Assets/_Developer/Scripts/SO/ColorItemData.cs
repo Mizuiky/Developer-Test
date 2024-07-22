@@ -1,4 +1,4 @@
-using Test.Color;
+using Test.Colors;
 using UnityEngine;
 
 namespace Test.Shop
