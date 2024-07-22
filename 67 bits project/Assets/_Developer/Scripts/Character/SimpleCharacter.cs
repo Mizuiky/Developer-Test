@@ -33,20 +33,20 @@ namespace Test.Characters
         {
             _hasChangedPosition = true;
             transform.SetParent(parent, false);
-            StartCoroutine(ChangePositionCoroutine());
+            StartCoroutine(ChangePositionCoroutine(parent.localPosition));
         }
 
-        private IEnumerator ChangePositionCoroutine()
+        //Quickly do the lerp - other time try to make it work better, but it is equal to the noodle run
+        private IEnumerator ChangePositionCoroutine(Vector3 destination)
         {
+            destination.y = 0f;
             while(_elapsedTime < _data.timeToMove)
             {
                 Debug.Log(_elapsedTime);
                 _elapsedTime += Time.deltaTime;
-                transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, _elapsedTime / _data.timeToMove);           
-                yield return null;
+                transform.localPosition = Vector3.Lerp(transform.localPosition, destination, _elapsedTime / _data.timeToMove);           
             }
-
-            transform.localPosition = Vector3.zero;          
+            yield return null;
         }
 
         public void Sell()
