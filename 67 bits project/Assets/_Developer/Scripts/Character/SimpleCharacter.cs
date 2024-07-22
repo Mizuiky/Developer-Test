@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using Test.Event;
 
 namespace Test.Characters
 {
@@ -9,15 +8,14 @@ namespace Test.Characters
         [SerializeField] private SimpleCharacterData _data;
         [SerializeField] private Transform _stackPivot;
 
-        public GameEvent _onCharacterAmountChanged;
-        public GameEventObject _onCharacterSold;
-
         private float _timeToMove;
         private float _elapsedTime;
         private bool _hasChangedPosition;
+        private float _price;
 
         public bool HasChangedPosition { get { return _hasChangedPosition; } }
         public Transform Pivot { get { return _stackPivot; } }
+        public float Price { get { return _price; } }
 
         public void Start()
         {
@@ -28,34 +26,34 @@ namespace Test.Characters
         {
             _elapsedTime = 0f;
             _hasChangedPosition = false;
+            _price = _data.characterValue;
         }
 
         public void ChangePosition(Transform parent)
         {
             _hasChangedPosition = true;
             transform.SetParent(parent, false);
-            StartCoroutine(ChangePositionCoroutine());
+            StartCoroutine(ChangePositionCoroutine(parent.localPosition));
         }
 
-        private IEnumerator ChangePositionCoroutine()
+        //Quickly do the lerp - other time try to make it work better, but it is equal to the noodle run
+        private IEnumerator ChangePositionCoroutine(Vector3 destination)
         {
+            destination.y = 0f;
             while(_elapsedTime < _data.timeToMove)
             {
                 Debug.Log(_elapsedTime);
                 _elapsedTime += Time.deltaTime;
-                transform.localPosition = Vector3.Lerp(transform.localPosition, Vector3.zero, _elapsedTime / _data.timeToMove);           
-                yield return null;
+                transform.localPosition = Vector3.Lerp(transform.localPosition, destination, _elapsedTime / _data.timeToMove);           
             }
-
-            transform.localPosition = Vector3.zero;          
+            yield return null;
         }
 
-        public void SellCharacter()
+        public void Sell()
         {
             transform.SetParent(null);
             //particle
             //audio
-            _onCharacterSold.Invoke(_data.characterValue);
             Destroy(gameObject);
         }
     }

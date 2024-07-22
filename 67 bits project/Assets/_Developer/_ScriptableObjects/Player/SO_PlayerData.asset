@@ -17,3 +17,4 @@ MonoBehaviour:
   acceleration: 10
   deaceleration: 60
   rotationSmoothTime: 0.06
+  initialMaxCharacterAmount: 2

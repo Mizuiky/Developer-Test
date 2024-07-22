@@ -1140,6 +1140,7 @@ GameObject:
   - component: {fileID: 8985970783649748767}
   - component: {fileID: 693801402228863265}
   - component: {fileID: 6075072757630928965}
+  - component: {fileID: 3977784242950358408}
   m_Layer: 0
   m_Name: Character_Boy
   m_TagString: Untagged
@@ -1200,6 +1201,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab27dde369c0514fbce1fc9bc1e44b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3977784242950358408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356568650868951447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadddee45d3fa594b832aa935fa8f168, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _body: {fileID: 3593743135789257559}
+  _shirt: {fileID: 2273149186204028765}
+  _pants: {fileID: 2273149186204028765}
+  _bodyColors: {fileID: 11400000, guid: 666f47191e106be49bbf8b83e7d34769, type: 2}
+  _shirtColors: {fileID: 11400000, guid: 449097975b79a9b4c8d56373dd8c0dea, type: 2}
+  _pantsColors: {fileID: 11400000, guid: 4058e8a2d7340ec4fa2bc6ff4d22362b, type: 2}
 --- !u!1 &6617642869994913464
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1364,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData: {fileID: 11400000, guid: b0e1bc4ffb6358f46a9650f7629bfe0c, type: 2}
   _stackParent: {fileID: 3729050339554242507}
+  _onColorUse: {fileID: 11400000, guid: cfe715537a8ac5c4097d8d58555b924f, type: 2}
+  _onStackAmountChanged: {fileID: 11400000, guid: d77375e9965f0dd449d4d0227c687197,
+    type: 2}
+  _currentCharacterQtd: {fileID: 11400000, guid: 9bfb7535ec3c0794ea2eb63b9b3a432d,
+    type: 2}
+  _maxCharacterQtd: {fileID: 11400000, guid: d5df62cda62a9fb45b81743242bfed22, type: 2}
+  _playerMoney: {fileID: 11400000, guid: fd192c86d7d59854a9122f8728dd280d, type: 2}
   _timeToSell: 0.8
 --- !u!114 &6948220567244490470
 MonoBehaviour:
@@ -1370,6 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3227e34d67332478361d0907458201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onUIOpened: {fileID: 11400000, guid: 3ca1327bac2244e47a29f862b8d745c7, type: 2}
 --- !u!114 &7888572225808281883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1431,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2a229ef1-9bd4-4ad0-b435-a43547a47bff
     m_ActionName: Player/Punch
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad7fb8ea-bdb9-45e1-8294-071b2b139205
+    m_ActionName: Player/PauseButton
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a9b748a-8585-4c9c-ae3b-cdba0b3486bd
+    m_ActionName: Player/ShopButton
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
