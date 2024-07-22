@@ -695,9 +695,10 @@ MonoBehaviour:
   _nameText: {fileID: 7611386668753035190}
   _priceText: {fileID: 6852544559269194244}
   _priceButton: {fileID: 2586115610813163244}
-  _stackItemData: {fileID: 0}
-  _onStackAmountChanged: {fileID: 11400000, guid: d77375e9965f0dd449d4d0227c687197,
+  _stackItemData: {fileID: 11400000, guid: 1ae0a655c44c2ad4e98bae2774b5aa8f, type: 2}
+  _maxCharacterAmount: {fileID: 11400000, guid: d5df62cda62a9fb45b81743242bfed22,
     type: 2}
+  _nextAmountText: {fileID: 730471588400712137}
 --- !u!1 &7405355567449087469
 GameObject:
   m_ObjectHideFlags: 0
