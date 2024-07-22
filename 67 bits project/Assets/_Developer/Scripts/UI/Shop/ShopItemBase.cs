@@ -41,7 +41,6 @@ namespace Test.Shop
         {
             //particle
             //audio
-            _priceText.text = _soldOut;
             _hasSold = true;
         }
         public virtual void CheckStoreItem() 
