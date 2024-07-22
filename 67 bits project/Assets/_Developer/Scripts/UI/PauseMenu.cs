@@ -34,6 +34,8 @@ namespace Test.UI
 
         public void ExitToMainMenu()
         {
+            _paused = 1;
+            Time.timeScale = _paused;
             SceneManager.LoadSceneAsync(0);
         }
     }
