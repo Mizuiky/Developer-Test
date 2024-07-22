@@ -6,14 +6,14 @@ namespace Test.Shop
     public class StackItem : ShopItemBase
     {
         [SerializeField] private StackItemData _stackItemData;
-        [SerializeField] private GameEventObject _onChangeStackAmount;
+        [SerializeField] private GameEventObject _onStackAmountChanged;
 
         public StackItemData StackData { get { return _stackItemData; } }
 
         public override void Init()
         {
             _price = _stackItemData.price;
-            _name = _stackItemData.name;
+            _itemName = _stackItemData.itemName;
             base.Init();
         }
 
@@ -33,7 +33,7 @@ namespace Test.Shop
 
         public override void UseItem()
         {
-            _onChangeStackAmount.Invoke(_stackItemData);
+            _onStackAmountChanged.Invoke(_stackItemData);
         }
     }
 }
