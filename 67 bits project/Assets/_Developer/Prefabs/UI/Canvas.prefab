@@ -236,76 +236,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1459502316892505797, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1459502316892505797, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1459502316892505797, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1459502316892505797, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2816399100958866353, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2816399100958866353, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2816399100958866353, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2816399100958866353, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305468745823513051, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305468745823513051, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305468745823513051, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3305468745823513051, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2902901432803442553, guid: 50947b63270411e42856c0be66160f8b, type: 3}
-    - {fileID: 1374546378474642474, guid: 50947b63270411e42856c0be66160f8b, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2046243530797904903, guid: 50947b63270411e42856c0be66160f8b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5881882780222940135}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50947b63270411e42856c0be66160f8b, type: 3}
 --- !u!224 &2663884697523390976 stripped
 RectTransform:
@@ -313,25 +247,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3000302775024170061}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3874926212229447754 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2046243530797904903, guid: 50947b63270411e42856c0be66160f8b,
-    type: 3}
-  m_PrefabInstance: {fileID: 3000302775024170061}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5881882780222940135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3874926212229447754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ControlPath: <Gamepad>/dpad/up
 --- !u!114 &5103270033003333170 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8030272679881765503, guid: 50947b63270411e42856c0be66160f8b,
