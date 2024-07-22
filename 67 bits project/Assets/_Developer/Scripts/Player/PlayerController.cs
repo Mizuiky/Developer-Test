@@ -12,7 +12,6 @@ namespace Test.Characters
         [SerializeField] private Transform _stackParent;
 
         [SerializeField] private GameEventObject _onColorUse;
-        [SerializeField] private GameEventObject _onStackAmountChanged;
 
         [SerializeField] private SoInt _currentCharacterQtd;
         [SerializeField] private SoInt _maxCharacterQtd;
@@ -22,13 +21,13 @@ namespace Test.Characters
 
         private Transform _pivot;
         private Stack<SimpleCharacter> _playerStack;
-     
+        private Stack<Transform> _stackPivot;
+
         public Transform StackPosition { get { return _pivot; } }
 
         public void OnEnable()
         {
             _onColorUse.Subscribe(ChangeColor);
-            _onStackAmountChanged.Subscribe(UpdateMaxStackAmount);
         }
 
         public override void Init()
@@ -38,6 +37,7 @@ namespace Test.Characters
             _maxCharacterQtd.value = _playerData.initialMaxCharacterAmount;
             _playerMoney.value = 0f;
             _playerStack = new Stack<SimpleCharacter>();
+            _stackPivot = new Stack<Transform>();
             base.Init();
         }
 
@@ -59,11 +59,6 @@ namespace Test.Characters
 
         #region PlayerStack
 
-        public void UpdateMaxStackAmount(object[] amount)
-        {
-            _maxCharacterQtd.value = (int)amount[0];
-        }
-
         public void IncreaseCurrentCharacterQtd(bool increased)
         {
             if(increased)
@@ -75,6 +70,12 @@ namespace Test.Characters
         public void SetStackPosition(Transform newPivot)
         {
             _pivot = newPivot;
+            if(_stackPivot.Count == 0)
+            {
+                _stackPivot.Push(_stackParent);
+                return;
+            }
+            _stackPivot.Push(_pivot);
         }
 
         public bool AddToStack(SimpleCharacter character)
@@ -95,10 +96,11 @@ namespace Test.Characters
             while (_playerStack.Count > 0)
             {
                 var character = _playerStack.Pop();
+                _pivot = _stackPivot.Pop();
                 _playerMoney.value += character.Price;
                 character.Sell();
-                yield return new WaitForSeconds(_timeToSell);
-                IncreaseCurrentCharacterQtd(false);
+                IncreaseCurrentCharacterQtd(false);         
+                yield return new WaitForSeconds(_timeToSell);           
             }
         }
 
@@ -108,7 +110,6 @@ namespace Test.Characters
         public void OnDisable()
         {
             _onColorUse.Unsubscribe(ChangeColor);
-            _onStackAmountChanged.Unsubscribe(UpdateMaxStackAmount);
         }
     }
 }
