@@ -9,10 +9,14 @@ namespace Test.UI
         [SerializeField] private HUD _hud;
         [SerializeField] private ShopController _shopController;
         [SerializeField] private GameEventObject _onItemSold;
+        [SerializeField] private GameEventObject _onUIOpened;
+
+        [SerializeField] private PauseMenu _pauseMenu;
 
         public void OnEnable()
         {
             _onItemSold.Subscribe(ShopItemCallBack);
+            _onUIOpened.Subscribe(OpenUI);
         }
 
         public void Start()
@@ -23,23 +27,35 @@ namespace Test.UI
         public void Init()
         {
             _shopController.Init();
+            //_pauseMenu.Init();
+        }
+
+        public void UpdateHUD(object[] args)
+        {
+
         }
 
         #region Shop
-        private void ShopItemCallBack(object args)
+        private void ShopItemCallBack(object[] args)
         {
-            _shopController.Sell((ShopItemBase)args);
+            _shopController.Sell((ShopItemBase)args[0]);
         }
 
-        public void OpenShop(bool canOpen)
+        private void OpenUI(object[] args)
         {
-            _shopController.Open(canOpen);   
+            if ((int)args[0] == 0)
+                _shopController.Open();
+
+            else if ((int)args[0] == 1)
+                _pauseMenu.Open();
         }
+
         #endregion
 
         public void OnDisable()
         {
             _onItemSold.Unsubscribe(ShopItemCallBack);
+            _onUIOpened.Unsubscribe(OpenUI);
         }
     }
 }
