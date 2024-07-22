@@ -1364,6 +1364,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData: {fileID: 11400000, guid: b0e1bc4ffb6358f46a9650f7629bfe0c, type: 2}
   _stackParent: {fileID: 3729050339554242507}
+  _onColorUse: {fileID: 11400000, guid: cfe715537a8ac5c4097d8d58555b924f, type: 2}
+  _onStackAmountChanged: {fileID: 11400000, guid: d77375e9965f0dd449d4d0227c687197,
+    type: 2}
+  _currentCharacterQtd: {fileID: 11400000, guid: 9bfb7535ec3c0794ea2eb63b9b3a432d,
+    type: 2}
+  _maxCharacterQtd: {fileID: 11400000, guid: d5df62cda62a9fb45b81743242bfed22, type: 2}
+  _playerMoney: {fileID: 11400000, guid: fd192c86d7d59854a9122f8728dd280d, type: 2}
   _timeToSell: 0.8
 --- !u!114 &6948220567244490470
 MonoBehaviour:
@@ -1389,6 +1396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e3227e34d67332478361d0907458201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onUIOpened: {fileID: 11400000, guid: 3ca1327bac2244e47a29f862b8d745c7, type: 2}
 --- !u!114 &7888572225808281883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1423,6 +1431,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2a229ef1-9bd4-4ad0-b435-a43547a47bff
     m_ActionName: Player/Punch
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad7fb8ea-bdb9-45e1-8294-071b2b139205
+    m_ActionName: Player/PauseButton
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a9b748a-8585-4c9c-ae3b-cdba0b3486bd
+    m_ActionName: Player/ShopButton
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

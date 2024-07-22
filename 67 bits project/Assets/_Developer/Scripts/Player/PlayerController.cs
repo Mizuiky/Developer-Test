@@ -1,33 +1,42 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System.Collections;
-using Test.Color;
+using System.Collections.Generic;
 using Test.Event;
 using Test.Shop;
+using Test.SOValue;
+using UnityEngine;
 
 namespace Test.Characters
 {
     public class PlayerController : PlayerCharacter
     {
         [SerializeField] private Transform _stackParent;
+
         [SerializeField] private GameEventObject _onColorUse;
+        [SerializeField] private GameEventObject _onStackAmountChanged;
+
+        [SerializeField] private SoInt _currentCharacterQtd;
+        [SerializeField] private SoInt _maxCharacterQtd;
+        [SerializeField] private SoFloat _playerMoney;
+
         [SerializeField] private float _timeToSell;
 
         private Transform _pivot;
         private Stack<SimpleCharacter> _playerStack;
-        private int _maxStackNumber;
      
         public Transform StackPosition { get { return _pivot; } }
 
         public void OnEnable()
         {
             _onColorUse.Subscribe(ChangeColor);
+            _onStackAmountChanged.Subscribe(UpdateMaxStackAmount);
         }
 
         public override void Init()
         {
             _pivot = _stackParent;
-            _maxStackNumber = _playerData.maxStackAmount;
+            _currentCharacterQtd.value = 0;
+            _maxCharacterQtd.value = _playerData.initialMaxCharacterAmount;
+            _playerMoney.value = 0f;
             _playerStack = new Stack<SimpleCharacter>();
             base.Init();
         }
@@ -50,9 +59,17 @@ namespace Test.Characters
 
         #region PlayerStack
 
-        public void IncreaseStackNumber(int amount)
+        public void UpdateMaxStackAmount(object[] amount)
         {
-            _maxStackNumber = amount;
+            _maxCharacterQtd.value = (int)amount[0];
+        }
+
+        public void IncreaseCurrentCharacterQtd(bool increased)
+        {
+            if(increased)
+                _currentCharacterQtd.value++;
+            else
+                _currentCharacterQtd.value--;
         }
 
         public void SetStackPosition(Transform newPivot)
@@ -62,7 +79,7 @@ namespace Test.Characters
 
         public bool AddToStack(SimpleCharacter character)
         {
-            if (_playerStack.Count == _maxStackNumber) return false;
+            if (_playerStack.Count == _maxCharacterQtd.value) return false;
             _playerStack.Push(character);
             return true;
         }
@@ -77,8 +94,11 @@ namespace Test.Characters
         {
             while (_playerStack.Count > 0)
             {
-               _playerStack.Pop().SellCharacter();
+                var character = _playerStack.Pop();
+                _playerMoney.value += character.Price;
+                character.Sell();
                 yield return new WaitForSeconds(_timeToSell);
+                IncreaseCurrentCharacterQtd(false);
             }
         }
 
@@ -88,6 +108,7 @@ namespace Test.Characters
         public void OnDisable()
         {
             _onColorUse.Unsubscribe(ChangeColor);
+            _onStackAmountChanged.Unsubscribe(UpdateMaxStackAmount);
         }
     }
 }
