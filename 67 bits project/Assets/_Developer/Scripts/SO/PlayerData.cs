@@ -10,6 +10,6 @@ namespace Test.Characters
         public float acceleration;
         public float deaceleration;
         public float rotationSmoothTime;
-        public int maxStackAmount;
+        public int initialMaxCharacterAmount;
     }
 }
