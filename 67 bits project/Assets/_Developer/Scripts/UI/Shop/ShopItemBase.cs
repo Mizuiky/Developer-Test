@@ -14,23 +14,27 @@ namespace Test.Shop
     public class ShopItemBase : MonoBehaviour, IShopItem
     {
         [SerializeField] protected GameEventObject _onItemSold;
-        [SerializeField] protected TextMeshProUGUI _itemName;
+        [SerializeField] protected TextMeshProUGUI _nameText;
         [SerializeField] protected TextMeshProUGUI _priceText;
         [SerializeField] protected Button _priceButton;
 
         protected float _price;
-        protected string _name;
+        protected string _itemName;
         protected string _soldOut = "Sold";
         protected bool _hasSold;
 
         public float Price { get { return _price; } }
 
+        public void Start()
+        {
+            Init();    
+        }
+
         public virtual void Init() 
         {
-            _itemName.text = _name.ToString();
-            _priceText.text = _price.ToString();
-            _priceButton.enabled = true;
             _hasSold = false;
+            _nameText.text = _itemName.ToString();
+            _priceText.text = _price.ToString();
         }
 
         public virtual void SellItem() 
