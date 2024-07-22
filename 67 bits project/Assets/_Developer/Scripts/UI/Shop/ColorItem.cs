@@ -13,7 +13,7 @@ namespace Test.Shop
         public override void Init()
         {
             _price = _colorItemData.price;
-            _name = _colorItemData.name;
+            _itemName = _colorItemData.itemName;
             base.Init();      
         }
 
@@ -21,6 +21,7 @@ namespace Test.Shop
         {
             base.SellItem();
             _soldOut = "Use";
+            _priceText.text = _soldOut;
         }   
         
         public override void CheckStoreItem()
