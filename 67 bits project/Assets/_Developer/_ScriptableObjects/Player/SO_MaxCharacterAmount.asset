@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0de53c8c8b8b36947950cad7a5850c43, type: 3}
-  m_Name: SO_PlayerData
+  m_Script: {fileID: 11500000, guid: 85c934fbef376104b8465599a5a8750a, type: 3}
+  m_Name: SO_MaxCharacterAmount
   m_EditorClassIdentifier: 
-  characterName: Player
-  maxSpeed: 13
-  acceleration: 10
-  deaceleration: 60
-  rotationSmoothTime: 0.06
-  initialMaxCharacterAmount: 2
+  value: 0
