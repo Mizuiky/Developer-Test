@@ -1,12 +1,14 @@
 using Test.Event;
 using UnityEngine;
 using Test.Shop;
+using Test.Manager;
 
 namespace Test.UI
 {
     public class UIController : MonoBehaviour
     {
         [SerializeField] private HUD _hud;
+        [SerializeField] private FPSManager _fpsManager;
         [SerializeField] private ShopController _shopController;
         [SerializeField] private GameEventObject _onItemSold;
         [SerializeField] private GameEventObject _onUIOpened;
@@ -28,6 +30,7 @@ namespace Test.UI
         {
             _shopController.Init();
             _pauseMenu.Init();
+            _fpsManager.Init();
         }
 
         #region Shop
