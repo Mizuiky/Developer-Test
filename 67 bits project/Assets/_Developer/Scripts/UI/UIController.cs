@@ -27,12 +27,7 @@ namespace Test.UI
         public void Init()
         {
             _shopController.Init();
-            //_pauseMenu.Init();
-        }
-
-        public void UpdateHUD(object[] args)
-        {
-
+            _pauseMenu.Init();
         }
 
         #region Shop
