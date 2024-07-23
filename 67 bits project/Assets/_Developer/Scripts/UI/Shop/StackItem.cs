@@ -21,7 +21,6 @@ namespace Test.Shop
 
             _currentStackAmountIndex = 0;
             _stackItemData.currentMaxStackAmount = _stackItemData.stackAmount[_currentStackAmountIndex];
-            _maxCharacterAmount.value = _currentStackAmountIndex;
 
             _nextStackAmountIndex = 1;       
             _nextAmountText.text = $"{_stackItemData.stackAmount[_nextStackAmountIndex]}+";
