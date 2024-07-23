@@ -23,6 +23,7 @@ namespace Test.Shop
             if (!_isOpen)
             {
                 gameObject.SetActive(true);
+                _moneyText.text = _playerMoney.value.ToString();
                 _isOpen = true;
             }
             else
