@@ -35,25 +35,24 @@ namespace Test.Manager
             //game is running
             while(true)
             {
-                yield return new WaitForSeconds(_intervalValue);
                 CalculateFPSValue();
-               
+                yield return new WaitForSeconds(_intervalValue);
             }
         }
 
         private void CalculateFPSValue()
         {
             _fpsValue = _frameCount / _elapsedTime;
-            _fpsFormatedText = string.Format("FPS: {0.0}", _fpsValue);
+            _fpsFormatedText = $"FPS: {_fpsValue:F0}";
 
             _currentFpsColor = _fpsValue >= 30f ? _highFpsColor : _lowFpsColor;
 
             if (_fpsText.color != _currentFpsColor)
-            {
-                _fpsText.text = _fpsFormatedText;
                 _fpsText.color = _currentFpsColor;
-            }
 
+            if (_fpsText.text != _fpsFormatedText.ToString())
+                _fpsText.text = _fpsFormatedText;
+                
             _frameCount = 0;
             _elapsedTime = 0;
         }
