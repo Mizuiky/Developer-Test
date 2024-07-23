@@ -42,7 +42,6 @@ namespace Test.Characters
             destination.y = 0f;
             while(_elapsedTime < _data.timeToMove)
             {
-                Debug.Log(_elapsedTime);
                 _elapsedTime += Time.deltaTime;
                 transform.localPosition = Vector3.Lerp(transform.localPosition, destination, _elapsedTime / _data.timeToMove);           
             }
